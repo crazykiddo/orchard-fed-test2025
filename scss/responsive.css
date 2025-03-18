@@ -46,6 +46,9 @@
     grid-template-columns: 1fr;
     gap: 40px;
   }
+  .modal-content {
+    width: 100%;
+  }
 }
 @media (max-width: 620px) {
   .philosophy-content {

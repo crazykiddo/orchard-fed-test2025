@@ -2,6 +2,10 @@
 This repository contains the code and resources for the Orchard Fed Test project conducted in 2025. The goal of this project was to convert a figma/zeplin into a 1 page webpage.
 With full responsive setup.
 
+# Reason for current setup
+As the design is simple in structure I decided to build it in "vanilla" HTML and JS but using SCSS (SASS) for the CSS
+
+
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
