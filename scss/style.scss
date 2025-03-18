@@ -1,0 +1,276 @@
+/* Root Variables */
+:root {
+  --blue: #1e90ff;
+  --white: #ffffff;
+  --body-bg: #0E1414;
+  --title-border-color: #fff;
+  --red: #cf1430;
+  color-scheme: dark light; /* light, normal, dark */
+  interpolate-size: allow-keywords; /* allow animate height to and from */
+}
+
+$blue: var(--blue);
+$white: var(--white);
+$body-bg: var(--body-bg);
+$title-border-color: var(--title-border-color);
+$red: var(--red);
+
+@mixin font-open-sans($weight: 300, $style: normal, $stretch: normal, $display: auto) {
+  font-family: 'OpenSans', sans-serif;
+  src: local(OpenSans-Light),
+       url(/fonts/OpenSans-Light.woff2) format("woff2"),
+       url(/fonts/OpenSans-Light.woff) format("woff"),
+       url(/fonts/OpenSans-Light.ttf) format("truetype");
+  font-weight: $weight;
+  font-style: $style;
+  font-stretch: $stretch;
+  font-display: $display;
+}
+
+/* External Fonts */
+@font-face {
+  @include font-open-sans;
+}
+
+/* CSS Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px; /* 1rem */
+}
+
+body {
+  @include font-open-sans;
+  line-height: 1.6;
+  color: $white;
+  background-color: $body-bg;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Main Content */
+.section {
+  padding: 60px 0;
+}
+
+.section-title {
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  font-weight: 300;
+  text-align: center;
+  position: relative;
+  font-size: 1.875rem;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.1;
+  letter-spacing: 1.5px;
+  padding-bottom: 30px;
+  border-bottom: solid 1px $title-border-color;
+  display: inline-block;
+}
+
+/* Cooking Philosophy Section */
+.cooking-philosophy {
+  padding: 120px 0;
+}
+
+.philosophy-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.philosophy-text {
+  margin-left: 30px;
+  max-width: 362px;
+  flex: 1 1 100%;
+
+  h2 {
+    flex-grow: 1;
+    font-size: 1.875rem;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.1;
+    letter-spacing: 1.5px;
+    text-align: left;
+    color: $white;
+    padding-bottom: 30px;
+    border-bottom: solid 1px $title-border-color;
+  }
+
+  p {
+    margin: 30px 0;
+    align-self: stretch;
+    flex-grow: 0;
+    @include font-open-sans;
+    font-size: 1.313rem;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    text-align: left;
+    color: $white;
+  }
+}
+
+.philosophy-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  flex-grow: 1;
+}
+
+.philosophy-image {
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &.large {
+    grid-row: span 2;
+  }
+}
+
+/* Technique Section */
+.technique-highlight {
+  margin-top: 30px;
+  padding: 15px 15px 15px 0px;
+  margin-bottom: 30px;
+
+  h3 {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    flex-grow: 0;
+    @include font-open-sans($weight: bold);
+    font-size: 0.938rem;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: normal;
+    text-align: left;
+    color: $red;
+  }
+
+  p {
+    font-size: 1.313rem;
+    font-weight: bold;
+    margin-top: 10px;
+    align-self: stretch;
+  }
+}
+
+/* Taste Section */
+.taste-colors {
+  padding: 120px 0;
+
+  .container {
+    text-align: center;
+  }
+}
+
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.color-item {
+  text-align: center;
+
+  a{
+    text-decoration: none;
+    color: var(--white);
+    text-transform: uppercase;
+    font-weight: bold;
+
+    &:hover {
+      color: var(--red);
+    }
+  }  
+}
+.color-image {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 30px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+
+    &:hover {
+      transform: scale(1.15);
+    }
+  }
+}
+
+.color-title {
+  align-self: stretch;
+  flex-grow: 0;
+  @include font-open-sans($weight: bold);
+  font-size: 1.313rem;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  text-align: center;
+  margin: 0 30px 10px 30px;
+}
+
+.color-description {
+  align-self: stretch;
+  flex-grow: 0;
+  @include font-open-sans;
+  font-size: 1.313rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  text-align: center;
+  margin: 0 30px 10px 30px;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.svgfun {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;  
+  width:30px;
+  height:30px;
+
+  animation: rotate 1s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+/* EOF */

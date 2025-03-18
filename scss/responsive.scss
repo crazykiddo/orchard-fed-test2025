@@ -1,0 +1,74 @@
+/* Responsive Styles */
+@media (max-width: 1240px) {
+  .cooking-philosophy {
+    padding: 120px 30px;
+  }
+}
+
+@media (max-width: 920px) {
+  .philosophy-content {
+    padding: 30px 0;
+  }
+  .philosophy-text {
+    order: 2;
+  }
+  .philosophy-images {
+    order: 1;
+    grid-template-rows: auto;
+    align-items: normal;
+  }
+  .svgfun {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .philosophy-images {
+    grid-template-columns: 1fr;
+  }
+  .philosophy-image.large {
+    grid-row: auto;
+  }
+  .header-content {
+    flex-direction: column;
+  }
+  .section-title {
+    font-size: 28px;
+  }
+  .cooking-philosophy {
+    padding: 0 30px;
+  }
+  .taste-colors {
+    padding: 0 30px 30px 30px;
+  }
+  .philosophy-text h2 {
+    font-size: 24px;
+  }
+  .color-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 620px) {
+  .philosophy-content {
+    flex-direction: column;
+  }
+  .philosophy-images {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    flex-grow: 1;
+    margin-bottom: 30px;
+  }
+  .philosophy-image.large {
+    grid-row: span 2;
+  }
+  .philosophy-image {
+    max-height: none;
+  }
+  .philosophy-text {
+    margin-left: 0;
+    max-width: 100%;
+  }
+}
